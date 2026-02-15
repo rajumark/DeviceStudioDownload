@@ -1,2 +1,0 @@
-# DeviceStudioDownload
-For publish DeviceStudio
