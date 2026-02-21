@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeviceStudio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-content {
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .download-btn {
+            background-color: #007AFF;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 122, 255, 0.1);
+        }
+
+        .download-btn:hover {
+            background-color: #0056CC;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 122, 255, 0.2);
+        }
+
+        .footer-text {
+            position: absolute;
+            bottom: 2rem;
+            text-align: center;
+            color: #888888;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .download-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1>DeviceStudio</h1>
+        <a href="https://github.com/rajumark/DeviceStudioDownload/tree/main" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="download-btn">
+            Download
+        </a>
+    </div>
+    
+    <div class="footer-text">
+        More are on the way, hand tight this in bookmark
+    </div>
+</body>
+</html>
