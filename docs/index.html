@@ -13,14 +13,15 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #ffffff;
-            color: #333333;
+            background-color: #000000;
+            color: #ffffff;
             height: 100vh;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            cursor: none;
         }
 
         .main-content {
@@ -40,24 +41,24 @@
         }
 
         .download-btn {
-            background-color: #007AFF;
-            color: white;
+            background-color: #ffffff;
+            color: #000000;
             border: none;
             padding: 1rem 2rem;
             font-size: 1.1rem;
             font-weight: 600;
-            border-radius: 12px;
+            border-radius: 0px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 122, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
         }
 
         .download-btn:hover {
-            background-color: #0056CC;
+            background-color: #f0f0f0;
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 122, 255, 0.2);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
         }
 
         .footer-text {
@@ -67,6 +68,35 @@
             color: #888888;
             font-size: 0.9rem;
             font-style: italic;
+        }
+
+        .custom-cursor {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            background-color: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            mix-blend-mode: difference;
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+        }
+
+        .custom-cursor::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 10px solid #ffffff;
+            margin-top: 2px;
         }
 
         @media (max-width: 768px) {
@@ -95,5 +125,33 @@
     <div class="footer-text">
         More are on the way, hand tight this in bookmark
     </div>
+
+    <div class="custom-cursor" id="cursor"></div>
+
+    <script>
+        const cursor = document.getElementById('cursor');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursor.style.transform = 'scale(0.8)';
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.style.transform = 'scale(1)';
+        });
+
+        // Hide cursor when it leaves the window
+        document.addEventListener('mouseleave', () => {
+            cursor.style.opacity = '0';
+        });
+
+        document.addEventListener('mouseenter', () => {
+            cursor.style.opacity = '1';
+        });
+    </script>
 </body>
 </html>
